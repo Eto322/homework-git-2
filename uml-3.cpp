@@ -147,6 +147,47 @@ private:
 	Node* _tail;
 };
 
+class Queue_list
+{
+public:
+
+
+	void clear()
+	{
+		for (int i = 0; i <_count; i++)
+		{
+			_ls.remove(0);
+			
+		}
+		_count = 0;
+	}
+	void Enqueue(int value)
+	{
+		_ls.add(value);
+		_count++;
+	}
+	int Dequeue()
+	{
+		int value;
+		value=_ls.remove(0);
+		_count--;
+		return value;
+	}
+	int get_count()
+	{
+		return _count;
+	}
+	void show()
+	{	
+		_ls.out_list();
+		
+	}
+
+private:
+	List _ls;
+	int _count=0;
+};
+
 
 void ex1()
 {
@@ -207,10 +248,6 @@ void ex1()
 
 }
 
-
-
-
-
 int main()
 {
 	cout << "select ex " << endl;
@@ -221,3 +258,5 @@ int main()
 	{
 		ex1();
 	}
+	
+}
