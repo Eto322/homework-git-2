@@ -148,6 +148,65 @@ private:
 };
 
 
+void ex1()
+{
+	int k;
+	List ls;
+	int value;
+	int index;
+	while (true)
+	{
+		system("pause");
+		system("cls");
+		cout << "List" << endl;
+		cout << "1.add" << endl;
+		cout << "2.insert " << endl;
+		cout << "3.remove" << endl;
+		cout << "4.search elment" << endl;
+		cout << "5.out list" << endl;
+		cin >> k;
+
+		switch (k)
+		{
+		case 1:
+			cout << "Enter value" << endl;
+			cin >> value;
+			ls.add(value);
+			break;
+		case 2:
+			cout << "Enter value" << endl;
+			cin >> value;
+			cout << "Enter index" << endl;
+			cin >> index;
+		
+			ls.insert(value, index);
+			break;
+		case 3:
+			cout << "Enter index" << endl;
+			cin >> index;
+			cout<<ls.remove(index);
+			
+			break;
+		case 4:
+			cout << "Enter value to search" << endl;
+			cin >> value;
+			cout << ls.find_index(value) << endl;
+			break;
+
+		case 5:
+			ls.out_list();
+			break;
+
+		default:
+			break;
+		}
+
+
+	}
+	
+
+}
+
 
 
 
