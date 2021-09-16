@@ -211,3 +211,13 @@ void ex1()
 
 
 
+int main()
+{
+	cout << "select ex " << endl;
+	cout << "1.Ex1\n2.Ex2" << endl;
+	int k;
+	cin >> k;
+	if (k==1)
+	{
+		ex1();
+	}
