@@ -147,6 +147,47 @@ private:
 	Node* _tail;
 };
 
+class Queue_list
+{
+public:
+
+
+	void clear()
+	{
+		for (int i = 0; i <_count; i++)
+		{
+			_ls.remove(0);
+			
+		}
+		_count = 0;
+	}
+	void Enqueue(int value)
+	{
+		_ls.add(value);
+		_count++;
+	}
+	int Dequeue()
+	{
+		int value;
+		value=_ls.remove(0);
+		_count--;
+		return value;
+	}
+	int get_count()
+	{
+		return _count;
+	}
+	void show()
+	{	
+		_ls.out_list();
+		
+	}
+
+private:
+	List _ls;
+	int _count=0;
+};
+
 
 void ex1()
 {
@@ -207,8 +248,55 @@ void ex1()
 
 }
 
+void ex2()
+{
+	int k;
+	int value;
+	int index;
+	Queue_list ls;
+	while (true)
+	{
+		system("pause");
+		system("cls");
+		cout << "Queue List" << endl;
+		cout << "1.Enqueue" << endl;
+		cout << "2.Dequeue " << endl;
+		cout << "3.get count" << endl;
+		cout << "4.clear" << endl;
+		cout << "5.show queue" << endl;
+		cin >> k;
+
+		switch (k)
+		{
+		case 1:
+			cout << "Enter value" << endl;
+			cin >> value;
+			ls.Enqueue(value);
+			break;
+		case 2:
+			
+			cout << ls.Dequeue() << endl;
+
+			break;
+		case 3:
+		
+			cout << ls.get_count() << endl;
+			break;
+		case 4:
+			ls.clear();
+			break;
+
+		case 5:
+			ls.show();
+			break;
+
+		default:
+			break;
+		}
 
 
+	}
+}
 
 
 int main()
@@ -221,3 +309,8 @@ int main()
 	{
 		ex1();
 	}
+	else
+	{
+		ex2();
+	}
+}
